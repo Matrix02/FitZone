@@ -22,7 +22,7 @@ public class Client extends User {
 	private String hieght;
 	private String wieght;
 	private String activity;
-	
+	//test
 	@ManyToMany
 	@JoinTable(name = "Client_Exercices", joinColumns = @JoinColumn(name = "client_id"), inverseJoinColumns = @JoinColumn(name = "exercice_id"))
 	Set<Exercices> likedExercices;
