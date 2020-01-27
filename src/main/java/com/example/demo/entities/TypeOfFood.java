@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +26,7 @@ public class TypeOfFood {
     @JoinColumn(name = "food_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    private Food FoodOfType;
+    List<Food> FoodOfType;
 	
 	public TypeOfFood() {
 		super();
@@ -44,11 +46,11 @@ public class TypeOfFood {
 		this.label = label;
 	}
 
-	public Food getFoodOfType() {
+	public List<Food> getFoodOfType() {
 		return FoodOfType;
 	}
 
-	public void setFoodOfType(Food foodOfType) {
+	public void setFoodOfType(List<Food> foodOfType) {
 		FoodOfType = foodOfType;
 	}
 	

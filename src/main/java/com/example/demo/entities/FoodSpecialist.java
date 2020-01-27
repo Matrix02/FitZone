@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,13 +22,13 @@ public class FoodSpecialist extends User{
 	private int id;
 	private String photo;
 	private String bio;
-	private boolean approval;
+	private boolean approval = false;
 	
 	  @ManyToOne
 	    @JoinColumn(name = "Meals_id", nullable = false)
 	    @OnDelete(action = OnDeleteAction.CASCADE)
 	    @JsonIgnore
-	    private Meals mealsOfFoodS;
+	    List<Meals> mealsOfFoodSpe;
 	
 	
 	public int getId() {
@@ -53,11 +55,12 @@ public class FoodSpecialist extends User{
 	public void setApproval(boolean approval) {
 		this.approval = approval;
 	}
-	public Meals getMealsOfFoodS() {
-		return mealsOfFoodS;
+	public List<Meals> getMealsOfFoodSpe() {
+		return mealsOfFoodSpe;
 	}
-	public void setMealsOfFoodS(Meals mealsOfFoodS) {
-		this.mealsOfFoodS = mealsOfFoodS;
+	public void setMealsOfFoodSpe(List<Meals> mealsOfFoodSpe) {
+		this.mealsOfFoodSpe = mealsOfFoodSpe;
 	}
+
 
 }
