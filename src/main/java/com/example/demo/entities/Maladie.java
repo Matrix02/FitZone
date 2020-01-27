@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -20,11 +21,11 @@ public class Maladie {
 	private String description;
 
 	@ManyToMany(mappedBy = "maladiesOfClient")
-	Set<Client> maladiesOfClient;
+	List<Client> maladiesOfClient;
 
 	@ManyToMany
 	@JoinTable(name = "Maladie_Meals", joinColumns = @JoinColumn(name = "maladie_id"), inverseJoinColumns = @JoinColumn(name = "meal_id"))
-	Set<Meals> maladiesOFMeals;
+	List<Meals> maladiesOFMeals;
 
 	public Maladie() {
 		super();
@@ -55,19 +56,19 @@ public class Maladie {
 		this.description = description;
 	}
 
-	public Set<Client> getMaladiesOfClient() {
+	public List<Client> getMaladiesOfClient() {
 		return maladiesOfClient;
 	}
 
-	public void setMaladiesOfClient(Set<Client> maladiesOfClient) {
+	public void setMaladiesOfClient(List<Client> maladiesOfClient) {
 		this.maladiesOfClient = maladiesOfClient;
 	}
 
-	public Set<Meals> getMaladiesOFMeals() {
+	public List<Meals> getMaladiesOFMeals() {
 		return maladiesOFMeals;
 	}
 
-	public void setMaladiesOFMeals(Set<Meals> maladiesOFMeals) {
+	public void setMaladiesOFMeals(List<Meals> maladiesOFMeals) {
 		this.maladiesOFMeals = maladiesOFMeals;
 	}
 

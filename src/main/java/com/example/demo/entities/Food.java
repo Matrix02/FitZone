@@ -26,21 +26,29 @@ public class Food {
 
 	@ManyToMany
 	@JoinTable(name = "Food_Meals", joinColumns = @JoinColumn(name = "food_id"), inverseJoinColumns = @JoinColumn(name = "meal_id"))
-	Set<Meals> MealOfFood;
+	List<Meals> MealOfFood;
 
 	@ManyToMany(mappedBy = "foodOfClient")
-	Set<Client> foodOfClient;
+	List<Client> foodOfClient;
 	
 	public Food() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Set<Client> getFoodOfClient() {
+	public List<Meals> getMealOfFood() {
+		return MealOfFood;
+	}
+
+	public void setMealOfFood(List<Meals> mealOfFood) {
+		MealOfFood = mealOfFood;
+	}
+
+	public List<Client> getFoodOfClient() {
 		return foodOfClient;
 	}
 
-	public void setFoodOfClient(Set<Client> foodOfClient) {
+	public void setFoodOfClient(List<Client> foodOfClient) {
 		this.foodOfClient = foodOfClient;
 	}
 
@@ -68,12 +76,5 @@ public class Food {
 		this.typeOfFood = typeOfFood;
 	}
 
-	public Set<Meals> getMealOfFood() {
-		return MealOfFood;
-	}
-
-	public void setMealOfFood(Set<Meals> mealOfFood) {
-		MealOfFood = mealOfFood;
-	}
 
 }

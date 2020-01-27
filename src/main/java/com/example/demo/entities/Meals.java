@@ -23,16 +23,16 @@ public class Meals {
 	private String calories;
 
 	@OneToMany(mappedBy = "mealsOfFoodS", fetch = FetchType.LAZY)
-	private List<FoodSpecialist> foodSpeciOfMeal;
+	List<FoodSpecialist> foodSpeciOfMeal;
 
 	@ManyToMany(mappedBy = "maladiesOFMeals")
-	Set<Maladie> maladiesOfMeals;
+	List<Maladie> maladiesOfMeals;
 
 	@ManyToMany(mappedBy = "mealsOfClient")
-	Set<Client> clientsOfMeals;
+	List<Client> clientsOfMeals;
 
 	@ManyToMany(mappedBy = "MealOfFood")
-	Set<Food> foodInMeal;
+	List<Food> foodInMeal;
 	
 	@OneToMany(mappedBy = "meal", fetch = FetchType.LAZY)
 	private List<TypeOfMeal> typeOfMeal;
@@ -42,36 +42,36 @@ public class Meals {
 		// TODO Auto-generated constructor stub
 	}
 
+	public List<Maladie> getMaladiesOfMeals() {
+		return maladiesOfMeals;
+	}
+
+	public void setMaladiesOfMeals(List<Maladie> maladiesOfMeals) {
+		this.maladiesOfMeals = maladiesOfMeals;
+	}
+
+	public List<Client> getClientsOfMeals() {
+		return clientsOfMeals;
+	}
+
+	public void setClientsOfMeals(List<Client> clientsOfMeals) {
+		this.clientsOfMeals = clientsOfMeals;
+	}
+
+	public List<Food> getFoodInMeal() {
+		return foodInMeal;
+	}
+
+	public void setFoodInMeal(List<Food> foodInMeal) {
+		this.foodInMeal = foodInMeal;
+	}
+
 	public List<FoodSpecialist> getFoodSpeciOfMeal() {
 		return foodSpeciOfMeal;
 	}
 
 	public void setFoodSpeciOfMeal(List<FoodSpecialist> foodSpeciOfMeal) {
 		this.foodSpeciOfMeal = foodSpeciOfMeal;
-	}
-
-	public Set<Maladie> getMaladiesOfMeals() {
-		return maladiesOfMeals;
-	}
-
-	public void setMaladiesOfMeals(Set<Maladie> maladiesOfMeals) {
-		this.maladiesOfMeals = maladiesOfMeals;
-	}
-
-	public Set<Client> getClientsOfMeals() {
-		return clientsOfMeals;
-	}
-
-	public void setClientsOfMeals(Set<Client> clientsOfMeals) {
-		this.clientsOfMeals = clientsOfMeals;
-	}
-
-	public Set<Food> getFoodInMeal() {
-		return foodInMeal;
-	}
-
-	public void setFoodInMeal(Set<Food> foodInMeal) {
-		this.foodInMeal = foodInMeal;
 	}
 
 	public List<TypeOfMeal> getTypeOfMeal() {

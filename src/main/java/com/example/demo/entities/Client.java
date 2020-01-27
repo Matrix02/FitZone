@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -22,24 +23,24 @@ public class Client extends User {
 	private String hieght;
 	private String wieght;
 	private String activity;
-	
+	//test
 	@ManyToMany
 	@JoinTable(name = "Client_Exercices", joinColumns = @JoinColumn(name = "client_id"), inverseJoinColumns = @JoinColumn(name = "exercice_id"))
-	Set<Exercices> likedExercices;
+	List<Exercices> likedExercices;
 
 	@ManyToMany
 	@JoinTable(name = "Client_Maladie", joinColumns = @JoinColumn(name = "client_id"), inverseJoinColumns = @JoinColumn(name = "maladie_id"))
 	
-	Set<Maladie> maladiesOfClient;
+	List<Maladie> maladiesOfClient;
 
 	@ManyToMany
 	@JoinTable(name = "Client_Meals", joinColumns = @JoinColumn(name = "client_id"), inverseJoinColumns = @JoinColumn(name = "meal_id"))
-	Set<Meals> mealsOfClient;
+	List<Meals> mealsOfClient;
 
 
 	@ManyToMany
 	@JoinTable(name = "Client_Food", joinColumns = @JoinColumn(name = "client_id"), inverseJoinColumns = @JoinColumn(name = "food_id"))
-	Set<Food> foodOfClient;
+	List<Food> foodOfClient;
 	
 
 	public Client() {
@@ -81,37 +82,53 @@ public class Client extends User {
 		this.wieght = wieght;
 	}
 
-	public Set<Food> getFoodOfClient() {
-		return foodOfClient;
-	}
-
-	public void setFoodOfClient(Set<Food> foodOfClient) {
-		this.foodOfClient = foodOfClient;
-	}
-
-	public Set<Exercices> getLikedExercices() {
+	public List<Exercices> getLikedExercices() {
 		return likedExercices;
 	}
 
-	public void setLikedExercices(Set<Exercices> likedExercices) {
+
+
+	public void setLikedExercices(List<Exercices> likedExercices) {
 		this.likedExercices = likedExercices;
 	}
 
-	public Set<Maladie> getMaladiesOfClient() {
+
+
+	public List<Maladie> getMaladiesOfClient() {
 		return maladiesOfClient;
 	}
 
-	public void setMaladiesOfClient(Set<Maladie> maladiesOfClient) {
+
+
+	public void setMaladiesOfClient(List<Maladie> maladiesOfClient) {
 		this.maladiesOfClient = maladiesOfClient;
 	}
 
-	public Set<Meals> getMealsOfClient() {
+
+
+	public List<Meals> getMealsOfClient() {
 		return mealsOfClient;
 	}
 
-	public void setMealsOfClient(Set<Meals> mealsOfClient) {
+
+
+	public void setMealsOfClient(List<Meals> mealsOfClient) {
 		this.mealsOfClient = mealsOfClient;
 	}
+
+
+
+	public List<Food> getFoodOfClient() {
+		return foodOfClient;
+	}
+
+
+
+	public void setFoodOfClient(List<Food> foodOfClient) {
+		this.foodOfClient = foodOfClient;
+	}
+
+
 
 	public int getId() {
 		return id;

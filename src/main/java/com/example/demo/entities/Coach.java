@@ -17,7 +17,7 @@ public class Coach extends User {
 	private int id;
 	private String photo;
 	private String bio;
-	private boolean approval;
+	private boolean approval = false;
 	
 	@OneToMany(mappedBy = "coach", fetch = FetchType.LAZY)
     private List<Exercices> exercicesOfCoach;
@@ -68,6 +68,8 @@ public class Coach extends User {
 	public void setApproval(boolean approval) {
 		this.approval = approval;
 	}
+	
+	
 	
 	
 }

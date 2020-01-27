@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,18 +26,18 @@ public class TypeOfMeal {
 	@JoinColumn(name = "category_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
-	private Meals meal;
+	List<Meals> meal;
 
 	public TypeOfMeal() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Meals getMeal() {
+	public List<Meals> getMeal() {
 		return meal;
 	}
 
-	public void setMeal(Meals meal) {
+	public void setMeal(List<Meals> meal) {
 		this.meal = meal;
 	}
 
