@@ -62,7 +62,7 @@ public class FoodSpecialistController {
 	// get All The Meals he or she added
 
 	@GetMapping("MealsOfFoodSpecialist")
-	public List<Meals> selectMealsOfFoodSpecialist(FoodSpecialist foodSpeacialist) {
+	public Meals selectMealsOfFoodSpecialist(FoodSpecialist foodSpeacialist) {
 		return foodSpeService.getMealsOfFoodSpecialist(foodSpeacialist);
 	}
 

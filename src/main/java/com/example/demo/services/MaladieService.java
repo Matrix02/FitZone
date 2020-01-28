@@ -12,7 +12,7 @@ import com.example.demo.entities.Meals;
 import com.example.demo.entities.DAO.IMaladie;
 
 @Service
-public class MaladieService {
+public class MaladieService implements IMaladieService {
 
 	@Autowired
 	IMaladie DAO;

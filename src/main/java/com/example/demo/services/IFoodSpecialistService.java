@@ -16,7 +16,7 @@ public interface IFoodSpecialistService {
 	
 	public Optional<FoodSpecialist> getFoodSpecialist(int id);
 	
-	public List<Meals> getMealsOfFoodSpecialist(FoodSpecialist foodSpecialist);
+	public Meals getMealsOfFoodSpecialist(FoodSpecialist foodSpecialist);
 
 	public boolean checkFoodSpeApprove(FoodSpecialist foodSpecialist);
 	

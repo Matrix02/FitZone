@@ -1,11 +1,11 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Role {
@@ -14,19 +14,19 @@ public class Role {
 	private int id;
 	private String Label;
 	
-	@ManyToOne
-	@JoinColumn(name="fk_User")
-	private User user;
+	@OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
+	List<User> user;
 	
 	public Role() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public User getUser() {
+	
+	public List<User> getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(List<User> user) {
 		this.user = user;
 	}
 	public int getId() {

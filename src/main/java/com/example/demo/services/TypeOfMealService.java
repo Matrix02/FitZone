@@ -32,8 +32,8 @@ public class TypeOfMealService implements ITypeOfMealService{
 		return DAO.findById(id);
 	}
 	
-	public List<Meals> getMealsOfType(TypeOfMeal typeOfMeal){
-		return typeOfMeal.getMeal();
+	public Meals getMealsOfType(TypeOfMeal typeOfMeal){
+		return typeOfMeal.getMealsOfFoodSpe();
 	}
 	
 }

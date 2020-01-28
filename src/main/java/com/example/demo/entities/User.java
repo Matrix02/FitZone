@@ -10,8 +10,6 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User {
