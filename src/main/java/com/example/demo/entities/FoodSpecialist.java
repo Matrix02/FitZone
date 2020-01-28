@@ -28,7 +28,7 @@ public class FoodSpecialist extends User{
 	    @JoinColumn(name = "Meals_id", nullable = false)
 	    @OnDelete(action = OnDeleteAction.CASCADE)
 	    @JsonIgnore
-	    List<Meals> mealsOfFoodSpe;
+	    Meals mealsOfFoodSpe;
 	
 	
 	public int getId() {
@@ -55,12 +55,12 @@ public class FoodSpecialist extends User{
 	public void setApproval(boolean approval) {
 		this.approval = approval;
 	}
-	public List<Meals> getMealsOfFoodSpe() {
+	public Meals getMealsOfFoodSpe() {
 		return mealsOfFoodSpe;
 	}
-	public void setMealsOfFoodSpe(List<Meals> mealsOfFoodSpe) {
+	public void setMealsOfFoodSpe(Meals mealsOfFoodSpe) {
 		this.mealsOfFoodSpe = mealsOfFoodSpe;
 	}
-
+	
 
 }

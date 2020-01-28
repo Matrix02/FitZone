@@ -66,7 +66,6 @@ public class ClientController {
 		return maladieService.getAllMaladies();
 	}
 	
-	
 	// CRUD food
 
 	@Autowired

@@ -16,6 +16,6 @@ public interface ITypeOfFoodService {
 	
 	public Optional<TypeOfFood> getOneTypeOfFood(int id);
 	
-	public List<Food> getFoodOfType(TypeOfFood typeOfFood);
+	public Food getFoodOfType(TypeOfFood typeOfFood);
 
 }

@@ -26,7 +26,7 @@ public class TypeOfFood {
     @JoinColumn(name = "food_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    List<Food> FoodOfType;
+    Food FoodOfType;
 	
 	public TypeOfFood() {
 		super();
@@ -46,11 +46,11 @@ public class TypeOfFood {
 		this.label = label;
 	}
 
-	public List<Food> getFoodOfType() {
+	public Food getFoodOfType() {
 		return FoodOfType;
 	}
 
-	public void setFoodOfType(List<Food> foodOfType) {
+	public void setFoodOfType(Food foodOfType) {
 		FoodOfType = foodOfType;
 	}
 	

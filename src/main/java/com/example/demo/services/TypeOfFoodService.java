@@ -11,7 +11,7 @@ import com.example.demo.entities.TypeOfFood;
 import com.example.demo.entities.DAO.ITypeOfFood;
 
 @Service
-public class TypeOfFoodService {
+public class TypeOfFoodService implements ITypeOfFoodService{
 
 	@Autowired
 	ITypeOfFood DAO;
@@ -32,7 +32,7 @@ public class TypeOfFoodService {
 		return DAO.findById(id);
 	}
 	
-	public List<Food> getFoodOfType(TypeOfFood typeOfFood){
+	public Food getFoodOfType(TypeOfFood typeOfFood){
 		return typeOfFood.getFoodOfType();
 	}
 }

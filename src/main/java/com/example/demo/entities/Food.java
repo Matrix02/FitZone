@@ -22,7 +22,7 @@ public class Food {
 	private String name;
 
 	@OneToMany(mappedBy = "FoodOfType", fetch = FetchType.LAZY)
-	private List<TypeOfFood> typeOfFood;
+	List<TypeOfFood> typeOfFood;
 
 	@ManyToMany
 	@JoinTable(name = "Food_Meals", joinColumns = @JoinColumn(name = "food_id"), inverseJoinColumns = @JoinColumn(name = "meal_id"))

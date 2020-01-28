@@ -26,20 +26,22 @@ public class TypeOfMeal {
 	@JoinColumn(name = "category_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
-	List<Meals> meal;
+	Meals mealsOfFoodSpe;
 
 	public TypeOfMeal() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public List<Meals> getMeal() {
-		return meal;
+	public Meals getMealsOfFoodSpe() {
+		return mealsOfFoodSpe;
 	}
 
-	public void setMeal(List<Meals> meal) {
-		this.meal = meal;
+
+	public void setMealsOfFoodSpe(Meals mealsOfFoodSpe) {
+		this.mealsOfFoodSpe = mealsOfFoodSpe;
 	}
+
 
 	public int getId() {
 		return id;

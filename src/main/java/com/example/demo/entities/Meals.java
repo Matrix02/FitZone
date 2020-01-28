@@ -22,7 +22,7 @@ public class Meals {
 	private String description;
 	private String calories;
 
-	@OneToMany(mappedBy = "mealsOfFoodS", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "mealsOfFoodSpe", fetch = FetchType.LAZY)
 	List<FoodSpecialist> foodSpeciOfMeal;
 
 	@ManyToMany(mappedBy = "maladiesOFMeals")
@@ -34,7 +34,7 @@ public class Meals {
 	@ManyToMany(mappedBy = "MealOfFood")
 	List<Food> foodInMeal;
 	
-	@OneToMany(mappedBy = "meal", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "mealsOfFoodSpe", fetch = FetchType.LAZY)
 	private List<TypeOfMeal> typeOfMeal;
 
 	public Meals() {
