@@ -20,7 +20,7 @@ import com.example.demo.services.IFoodSpecialistService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("api/gestionnaire")
+@RequestMapping("/api/gestionnaire")
 public class GestionnaireController {
 	
 	//Get ALL and delete clients
@@ -28,12 +28,12 @@ public class GestionnaireController {
 	@Autowired
 	IClientService clientService;
 	
-	@GetMapping("getClients")
+	@GetMapping("/getClients")
 	public List<Client> getAllClients(){
 		return clientService.getAllClients();
 	}
 	
-	@DeleteMapping("deleteClient/{id}")
+	@DeleteMapping("/deleteClient/{id}")
 	public void deleteClient(@PathVariable("id") int id) {
 		clientService.deleteClient(id);
 	}
@@ -43,17 +43,17 @@ public class GestionnaireController {
 	@Autowired
 	IFoodSpecialistService foodSpeService;
 	
-	@GetMapping("getAllFoodSpecialist")
+	@GetMapping("/getAllFoodSpecialist")
 	public List<FoodSpecialist> getAllFoodSpecialist(){
 		return foodSpeService.getAllFoodSpecialist();
 	}
 	
-	@DeleteMapping("deleteFoodSpecialist/{id}")
+	@DeleteMapping("/deleteFoodSpecialist/{id}")
 	public void deleteFoodSpecialist(@PathVariable("id") int id) {
 		foodSpeService.deleteFoodSpecialist(id);
 	}
 	
-	@PostMapping("approveFoodSpecialist/{id}")
+	@PostMapping("/approveFoodSpecialist/{id}")
 	public void approveFoodSpecialist(@PathVariable("id") int id) {
 		foodSpeService.approveFoodSpecialist(foodSpeService.getFoodSpecialist(id).get());
 	}
@@ -64,17 +64,17 @@ public class GestionnaireController {
 	@Autowired
 	ICoachService coachSrvice;
 	
-	@GetMapping("getAllCoaches")
+	@GetMapping("/getAllCoaches")
 	public List<Coach> getAllCoaches(){
 		return coachSrvice.getAllCoachs();
 	}
 	
-	@DeleteMapping("deleteCoach/{id}")
+	@DeleteMapping("/deleteCoach/{id}")
 	public void deltecoach(@PathVariable("id") int id) {
 		coachSrvice.deleteCoach(id);
 	}
 	
-	@PostMapping("approveCoach/{id}")
+	@PostMapping("/approveCoach/{id}")
 	public void approveCoach(@PathVariable("id") int id) {
 		coachSrvice.approveCoach(coachSrvice.getCoach(id).get());
 	}
