@@ -27,33 +27,33 @@ import com.example.demo.services.IupLoadImageService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("api/cient")
+@RequestMapping("/api/client")
 public class ClientController {
 
 	@Autowired
 	IClientService service;
 	
-	@PostMapping("addClient")
+	@PostMapping("/addClient")
 	public void saveClient(@RequestBody Client client) {
 		service.addOrUpdateClient(client);
 	}
 	
-	@DeleteMapping("deleteCliet/{id}")
+	@DeleteMapping("/deleteCliet/{id}")
 	public void deleteClient(@PathVariable("id") int id) {
 		service.deleteClient(id);
 	}
 	
-	@GetMapping("exercicesOfClient")
+	@GetMapping("/exercicesOfClient")
 	public List<Exercices> selectExercicesOfClient(Client client){
 		return service.getExercicesOfCient(client);
 	}
 	
-	@GetMapping("mealsOfClient")
+	@GetMapping("/mealsOfClient")
 	public List<Meals> selectMealsOfClient(Client client){
 		return service.getMealsOfClient(client);
 	}
 	
-	@GetMapping("madaliesOfCleint")
+	@GetMapping("/madaliesOfCleint")
 	public List<Maladie> selectMaladiesOfClient(Client client){
 		return service.getMaladieOfClient(client);
 	}
@@ -63,7 +63,7 @@ public class ClientController {
 	@Autowired
 	IMaladieService maladieService;
 
-	@GetMapping("GetMaladie")
+	@GetMapping("/getMaladie")
 	public List<Maladie> getAllMaladies() {
 		return maladieService.getAllMaladies();
 	}
@@ -73,7 +73,7 @@ public class ClientController {
 	@Autowired
 	IFoodService foodService;
 
-	@GetMapping("GetTypeOfFood")
+	@GetMapping("/getTypeOfFood")
 	public List<TypeOfFood> getAllTypeOfFood(Food food) {
 		return foodService.getTypeOfFood(food);
 	}
