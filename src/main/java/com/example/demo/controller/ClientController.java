@@ -23,7 +23,7 @@ import com.example.demo.services.IFoodService;
 import com.example.demo.services.IMaladieService;
 
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/client")
 public class ClientController {

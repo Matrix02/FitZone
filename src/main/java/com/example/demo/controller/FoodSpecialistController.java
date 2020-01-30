@@ -26,7 +26,7 @@ import com.example.demo.services.ITypeOfMealService;
 
 @RestController
 @RequestMapping("/api/foodSpecialist")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 public class FoodSpecialistController {
 
 	@Autowired
