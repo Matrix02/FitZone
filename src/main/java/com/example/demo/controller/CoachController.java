@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.Coach;
 import com.example.demo.entities.Exercices;
+import com.example.demo.entities.Role;
 import com.example.demo.services.ICoachService;
 import com.example.demo.services.IExercicesService;
 

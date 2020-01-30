@@ -20,7 +20,7 @@ public interface IMealService {
 	
 	public Optional<Meals> getMeal(int id);
 	
-	public List<FoodSpecialist> getFoodSpecialistOfMeal(Meals meal);
+	public FoodSpecialist getFoodSpecialistOfMeal(Meals meal);
 	
 	public List<Maladie> getMaladieOfMeal(Meals meal);
 	

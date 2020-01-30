@@ -36,8 +36,8 @@ public class MealService implements IMealService {
 		return DAO.findById(id);
 	}
 	
-	public List<FoodSpecialist> getFoodSpecialistOfMeal(Meals meal){
-		return meal.getFoodSpeciOfMeal();
+	public FoodSpecialist getFoodSpecialistOfMeal(Meals meal){
+		return meal.getMealOFFoodSpeci();
 	}
 	
 	public List<Maladie> getMaladieOfMeal(Meals meal){

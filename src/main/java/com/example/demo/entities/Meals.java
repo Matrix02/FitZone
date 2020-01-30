@@ -8,8 +8,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Meals {
@@ -22,8 +29,11 @@ public class Meals {
 	private String description;
 	private String calories;
 
-	@OneToMany(mappedBy = "mealsOfFoodSpe", fetch = FetchType.LAZY)
-	List<FoodSpecialist> foodSpeciOfMeal;
+	@ManyToOne
+	@JoinColumn(name = "Meals_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+	FoodSpecialist MealOFFoodSpeci;
 
 	@ManyToMany(mappedBy = "maladiesOFMeals")
 	List<Maladie> maladiesOfMeals;
@@ -66,12 +76,12 @@ public class Meals {
 		this.foodInMeal = foodInMeal;
 	}
 
-	public List<FoodSpecialist> getFoodSpeciOfMeal() {
-		return foodSpeciOfMeal;
+	public FoodSpecialist getMealOFFoodSpeci() {
+		return MealOFFoodSpeci;
 	}
 
-	public void setFoodSpeciOfMeal(List<FoodSpecialist> foodSpeciOfMeal) {
-		this.foodSpeciOfMeal = foodSpeciOfMeal;
+	public void setMealOFFoodSpeci(FoodSpecialist mealOFFoodSpeci) {
+		MealOFFoodSpeci = mealOFFoodSpeci;
 	}
 
 	public List<TypeOfMeal> getTypeOfMeal() {

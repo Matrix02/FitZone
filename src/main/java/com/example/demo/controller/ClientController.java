@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.entities.Client;
 import com.example.demo.entities.Exercices;
@@ -22,7 +21,6 @@ import com.example.demo.entities.TypeOfFood;
 import com.example.demo.services.IClientService;
 import com.example.demo.services.IFoodService;
 import com.example.demo.services.IMaladieService;
-import com.example.demo.services.IupLoadImageService;
 
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -78,19 +76,4 @@ public class ClientController {
 		return foodService.getTypeOfFood(food);
 	}
 	
-	//upload image of user
-	
-	@Autowired
-	IupLoadImageService uploudService;
-	
-	 @PostMapping("/image")
-     public void addImage(@RequestBody MultipartFile image) throws Exception {
-		 uploudService.uploadImage(image);;
-
-     }
-
-     @GetMapping("/image/dir")
-     public String imageDir(){
-         return uploudService.getUploadDirectory();
-     }
 }
