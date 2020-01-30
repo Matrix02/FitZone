@@ -18,7 +18,7 @@ import com.example.demo.services.IClientService;
 import com.example.demo.services.ICoachService;
 import com.example.demo.services.IFoodSpecialistService;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/gestionnaire")
 public class GestionnaireController {

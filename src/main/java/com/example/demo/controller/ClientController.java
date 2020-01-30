@@ -25,7 +25,7 @@ import com.example.demo.services.IMaladieService;
 import com.example.demo.services.IupLoadImageService;
 
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/client")
 public class ClientController {
