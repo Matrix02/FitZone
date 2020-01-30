@@ -12,13 +12,15 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
+import org.springframework.web.multipart.MultipartFile;
+
 @Entity
 public class Client extends User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private String photo;
+	private MultipartFile[] photo;
 	private String age;
 	private String hieght;
 	private String wieght;
@@ -47,8 +49,6 @@ public class Client extends User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 	
 	public String getActivity() {
 		return activity;
@@ -86,49 +86,33 @@ public class Client extends User {
 		return likedExercices;
 	}
 
-
-
 	public void setLikedExercices(List<Exercices> likedExercices) {
 		this.likedExercices = likedExercices;
 	}
-
-
 
 	public List<Maladie> getMaladiesOfClient() {
 		return maladiesOfClient;
 	}
 
-
-
 	public void setMaladiesOfClient(List<Maladie> maladiesOfClient) {
 		this.maladiesOfClient = maladiesOfClient;
 	}
-
-
 
 	public List<Meals> getMealsOfClient() {
 		return mealsOfClient;
 	}
 
-
-
 	public void setMealsOfClient(List<Meals> mealsOfClient) {
 		this.mealsOfClient = mealsOfClient;
 	}
-
-
 
 	public List<Food> getFoodOfClient() {
 		return foodOfClient;
 	}
 
-
-
 	public void setFoodOfClient(List<Food> foodOfClient) {
 		this.foodOfClient = foodOfClient;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -138,11 +122,11 @@ public class Client extends User {
 		this.id = id;
 	}
 
-	public String getPhoto() {
+	public MultipartFile[] getPhoto() {
 		return photo;
 	}
 
-	public void setPhoto(String photo) {
+	public void setPhoto(MultipartFile[] photo) {
 		this.photo = photo;
 	}
 
