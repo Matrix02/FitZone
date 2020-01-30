@@ -56,8 +56,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.authorizeRequests()
 				.antMatchers("/api/authenticate", "/api/register", "/hello").permitAll()
 				.antMatchers("/api/gestionnaire/**").hasAuthority("gestionnaire")
-				.antMatchers("/api/coach/**").hasAuthority("coach")
-				.antMatchers("/api/foodSpecialist/**").hasAuthority("food specialist")
+				.antMatchers("/api/coach/**").permitAll()
+				.antMatchers("/api/foodSpecialist/**").permitAll()
 				.antMatchers("/api/client/**").hasAuthority("client")
 				// all other requests need to be authenticated
 				.anyRequest().authenticated().and().

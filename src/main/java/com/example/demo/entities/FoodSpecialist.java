@@ -3,11 +3,14 @@ package com.example.demo.entities;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -15,28 +18,16 @@ import org.hibernate.annotations.OnDeleteAction;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(name = "User")
 public class FoodSpecialist extends User{
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
 	private String photo;
 	private String bio;
 	private boolean approval = false;
 	
-	  @ManyToOne
-	    @JoinColumn(name = "Meals_id", nullable = false)
-	    @OnDelete(action = OnDeleteAction.CASCADE)
-	    @JsonIgnore
-	    Meals mealsOfFoodSpe;
+	  @OneToMany(mappedBy = "MealOFFoodSpeci", fetch = FetchType.LAZY)
+	    List<Meals> mealsOfFoodSpe;
 	
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getPhoto() {
 		return photo;
 	}
@@ -55,12 +46,16 @@ public class FoodSpecialist extends User{
 	public void setApproval(boolean approval) {
 		this.approval = approval;
 	}
-	public Meals getMealsOfFoodSpe() {
+	public List<Meals> getMealsOfFoodSpe() {
 		return mealsOfFoodSpe;
 	}
-	public void setMealsOfFoodSpe(Meals mealsOfFoodSpe) {
+	public void setMealsOfFoodSpe(List<Meals> mealsOfFoodSpe) {
 		this.mealsOfFoodSpe = mealsOfFoodSpe;
 	}
-	
+	@Override
+	public String toString() {
+		return "FoodSpecialist [photo=" + photo + ", bio=" + bio + ", approval=" + approval + ", mealsOfFoodSpe="
+				+ mealsOfFoodSpe + "]";
+	}
 
 }

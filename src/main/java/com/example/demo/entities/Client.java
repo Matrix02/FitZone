@@ -11,10 +11,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
+@Table(name = "User")
 public class Client extends User {
 
 	@Id

@@ -41,7 +41,7 @@ public class FoodSpecialistService implements IFoodSpecialistService {
 		return DAO.save(foodSpecialist);
 	}
 	
-	public Meals getMealsOfFoodSpecialist(FoodSpecialist foodSpecialist){
+	public List<Meals> getMealsOfFoodSpecialist(FoodSpecialist foodSpecialist){
 		return foodSpecialist.getMealsOfFoodSpe();
 	}
 
