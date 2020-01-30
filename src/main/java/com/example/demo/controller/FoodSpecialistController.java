@@ -25,8 +25,8 @@ import com.example.demo.services.ITypeOfFoodService;
 import com.example.demo.services.ITypeOfMealService;
 
 @RestController
-@RequestMapping("api/foodSpecialist")
-@CrossOrigin
+@RequestMapping("/api/foodSpecialist")
+@CrossOrigin(origins = "http://localhost:4200")
 public class FoodSpecialistController {
 
 	@Autowired
@@ -34,12 +34,12 @@ public class FoodSpecialistController {
 
 	// ADD or DELETE FoodSpecialist
 
-	@PostMapping("addFoodSpecialist")
+	@PostMapping("/addFoodSpecialist")
 	public void saveFoodSpecialist(FoodSpecialist foodSpecialist) {
 		foodSpeService.addOrUpdateFoodSpecialist(foodSpecialist);
 	}
 
-	@DeleteMapping("deleteFoodSpesialist/{id}")
+	@DeleteMapping("/deleteFoodSpesialist/{id}")
 	public void deleteFoodSpesialist(@PathVariable("id") int id) {
 		foodSpeService.deleteFoodSpecialist(id);
 	}
@@ -49,19 +49,19 @@ public class FoodSpecialistController {
 	@Autowired
 	IMealService mealService;
 
-	@PostMapping("AddMeals")
+	@PostMapping("/AddMeals")
 	public void addMeals(Meals meal) {
 		mealService.addOrUpdateMeal(meal);
 	}
 
-	@DeleteMapping("deleteMeals/{id}")
+	@DeleteMapping("/deleteMeals/{id}")
 	public void deleteMeal(@PathVariable("id") int id) {
 		mealService.deleteMeal(id);
 	}
 
 	// get All The Meals he or she added
 
-	@GetMapping("MealsOfFoodSpecialist")
+	@GetMapping("/MealsOfFoodSpecialist")
 	public Meals selectMealsOfFoodSpecialist(FoodSpecialist foodSpeacialist) {
 		return foodSpeService.getMealsOfFoodSpecialist(foodSpeacialist);
 	}
@@ -71,7 +71,7 @@ public class FoodSpecialistController {
 	@Autowired
 	ITypeOfMealService typeOfMealsService;
 
-	@GetMapping("typeOfMeals")
+	@GetMapping("/typeOfMeals")
 	public List<TypeOfMeal> getAllTypesOfMeals() {
 		return typeOfMealsService.getAllTypesOfMeals();
 	}
@@ -81,19 +81,19 @@ public class FoodSpecialistController {
 	@Autowired
 	IFoodService foodService;
 
-	@PostMapping("addFood")
+	@PostMapping("/addFood")
 	public void addFood(Food food) {
 		foodService.addOrUpdateFood(food);
 	}
 
-	@DeleteMapping("deleteFood/{id}")
+	@DeleteMapping("/deleteFood/{id}")
 	public void deleteFood(int id) {
 		foodService.deleteFood(id);
 	}
 
 	// Get and Set ALL Types Of Food
 
-	@GetMapping("GetTypeOfFood")
+	@GetMapping("/GetTypeOfFood")
 	public List<TypeOfFood> getAllTypeOfFood(Food food) {
 		return foodService.getTypeOfFood(food);
 	}
@@ -101,7 +101,7 @@ public class FoodSpecialistController {
 	@Autowired
 	ITypeOfFoodService typeOfFoodService;
 
-	@PostMapping("addTypefsOfFood")
+	@PostMapping("/addTypefsOfFood")
 	public void addTypeOfFood(TypeOfFood typeOfFood) {
 		typeOfFoodService.addOrUpdate(typeOfFood);
 	}
@@ -111,12 +111,12 @@ public class FoodSpecialistController {
 	@Autowired
 	IMaladieService maladieService;
 
-	@GetMapping("GetMaladie")
+	@GetMapping("/GetMaladie")
 	public List<Maladie> getAllMaladies() {
 		return maladieService.getAllMaladies();
 	}
 
-	@PostMapping("setMaladie")
+	@PostMapping("/setMaladie")
 	public void setMaladies(Maladie maladie) {
 		maladieService.addOrUpDateMaladie(maladie);
 	}

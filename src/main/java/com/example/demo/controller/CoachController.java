@@ -21,18 +21,18 @@ import javassist.NotFoundException;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("api/coach")
+@RequestMapping("/api/coach")
 public class CoachController {
 
 	@Autowired
 	ICoachService coachService;
 	
-	@PostMapping("addCoach")
+	@PostMapping("/addCoach")
 	public void saveCoach(@RequestBody Coach coach) {
 		coachService.addOrUpdateCloach(coach);
 	}
 
-	@DeleteMapping("deleteCoach/{id}")
+	@DeleteMapping("/deleteCoach/{id}")
 	public void deleteCoach(@PathVariable("id") int id) {
 		coachService.deleteCoach(id);
 	}
@@ -42,17 +42,17 @@ public class CoachController {
 	@Autowired
 	IExercicesService ExerciesService;
 	
-	@PostMapping("addExercice")
+	@PostMapping("/addExercice")
 	public void saveExercice(@RequestBody Exercices exercice) {
 		ExerciesService.addOrUpdateExercice(exercice);
 	}
 	
-	@DeleteMapping("deleteExercice/{id}")
+	@DeleteMapping("/deleteExercice/{id}")
 	public void deleteExercice(@PathVariable("id") int id) {
 		ExerciesService.deleteExercice(id);
 	}
 	
-	@GetMapping("execicesOfCoach")
+	@GetMapping("/execicesOfCoach")
 	public List<Exercices> getExerciceOfCoach(Coach coach){
 		return coachService.getAllExercicesOfCoach(coach);
 	}

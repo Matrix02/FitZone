@@ -22,8 +22,9 @@ import com.example.demo.model.JwtRequest;
 import com.example.demo.model.JwtResponse;
 import com.example.demo.model.UserDTO;
 
+
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 public class JwtAuthenticationController {
 	
 	
@@ -39,7 +40,7 @@ public class JwtAuthenticationController {
 	@Autowired
 	private JwtUserDetailsService userDetailsService;
 
-	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+	@RequestMapping(value = "/api/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
@@ -53,7 +54,7 @@ public class JwtAuthenticationController {
 	}
 	
 	//*adding a POST request for adding user details to database.
-		@RequestMapping(value = "/register", method = RequestMethod.POST)
+		@RequestMapping(value = "/api/register", method = RequestMethod.POST)
 		public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
 		return ResponseEntity.ok(userDetailsService.save(user));
 		}
