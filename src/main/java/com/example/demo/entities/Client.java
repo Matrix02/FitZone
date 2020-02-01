@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -19,9 +20,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Table(name = "User")
 public class Client extends User {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
 	private MultipartFile[] photo;
 	private String age;
 	private String hieght;
@@ -116,13 +114,7 @@ public class Client extends User {
 		this.foodOfClient = foodOfClient;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 
 	public MultipartFile[] getPhoto() {
 		return photo;
@@ -130,6 +122,13 @@ public class Client extends User {
 
 	public void setPhoto(MultipartFile[] photo) {
 		this.photo = photo;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [photo=" + Arrays.toString(photo) + ", age=" + age + ", hieght=" + hieght + ", wieght=" + wieght
+				+ ", activity=" + activity + ", likedExercices=" + likedExercices + ", maladiesOfClient="
+				+ maladiesOfClient + ", mealsOfClient=" + mealsOfClient + ", foodOfClient=" + foodOfClient + "]";
 	}
 
 }

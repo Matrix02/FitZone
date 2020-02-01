@@ -33,6 +33,7 @@ public class ClientController {
 	
 	@PostMapping("/addClient")
 	public void saveClient(@RequestBody Client client) {
+		System.out.println(client);
 		service.addOrUpdateClient(client);
 	}
 	

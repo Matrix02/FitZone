@@ -27,7 +27,7 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+	 
 	public int getId() {
 		return id;
 	}
