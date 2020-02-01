@@ -5,9 +5,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 
 import com.example.demo.entities.Coach;
 import com.example.demo.entities.Exercices;
+import com.example.demo.entities.Role;
 import com.example.demo.entities.DAO.ICoach;
 
 @Service
@@ -16,7 +19,13 @@ public class CoachService implements ICoachService {
 	@Autowired
 	ICoach DAO;
 	
+	BCryptPasswordEncoder bcryptEncoder = new BCryptPasswordEncoder();
+	
 	public void addOrUpdateCloach(Coach coach) {
+		coach.setPassword(bcryptEncoder.encode(coach.getPassword()));
+		Role role = new Role();
+		role.setId(3);
+		coach.setRole(role);
 		DAO.save(coach);
 	}
 	
