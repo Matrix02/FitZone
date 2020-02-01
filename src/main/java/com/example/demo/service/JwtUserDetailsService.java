@@ -10,10 +10,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import com.example.demo.entities.User;
 
+import com.example.demo.entities.Client;
+import com.example.demo.entities.Coach;
+import com.example.demo.entities.FoodSpecialist;
+import com.example.demo.entities.User;
+import com.example.demo.entities.DAO.IClient;
+import com.example.demo.entities.DAO.ICoach;
+import com.example.demo.entities.DAO.IFoodSpecialist;
 import com.example.demo.entities.DAO.IUser;
-import com.example.demo.model.UserDTO;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service
@@ -23,8 +28,6 @@ public class JwtUserDetailsService implements UserDetailsService {
 	@Autowired
 	private IUser userDao;
 
-	@Autowired
-	private PasswordEncoder bcryptEncoder;
 	
 		
 	@Override
@@ -48,14 +51,5 @@ public class JwtUserDetailsService implements UserDetailsService {
 		return authorities;
 	}
 
-	
-	// This Method is responsible for setting both name and user name in the database, the DTO was used to fetch the data at once;
-	
-		public User save(UserDTO user) {
-		User newUser = new User();
-		newUser.setUsername(user.getUsername());
-		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-		newUser.setRole(user.getRole());
-		return userDao.save(newUser);
-		}
 }
+	// This Method is responsible for setting both name and user name in the database, the DTO was used to fetch the data at once;

@@ -6,4 +6,8 @@ import com.example.demo.entities.FoodSpecialist;
 
 public interface IFoodSpecialist extends JpaRepository<FoodSpecialist, Integer> {
 
+
+
+	
+	
 }

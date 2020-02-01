@@ -54,11 +54,12 @@ public class JwtAuthenticationController {
 	}
 	
 	//*adding a POST request for adding user details to database.
-		@RequestMapping(value = "/api/register", method = RequestMethod.POST)
-		public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
-		return ResponseEntity.ok(userDetailsService.save(user));
-		}
+//		@RequestMapping(value = "/api/register", method = RequestMethod.POST)
+//		public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+//		return ResponseEntity.ok(userDetailsService.save(user));
+//		}
 		//*
+	
 	private void authenticate(String username, String password) throws Exception {
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));

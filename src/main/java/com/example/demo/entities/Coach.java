@@ -32,6 +32,8 @@ public class Coach extends User {
 	public void setExercicesOfCoach(List<Exercices> exercicesOfCoach) {
 		this.exercicesOfCoach = exercicesOfCoach;
 	}
+	
+	public Coach() {}
 
 	public Coach(String photo, String bio) {
 		super();
