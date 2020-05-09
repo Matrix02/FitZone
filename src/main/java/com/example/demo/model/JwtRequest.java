@@ -35,4 +35,6 @@ public class JwtRequest implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
 }

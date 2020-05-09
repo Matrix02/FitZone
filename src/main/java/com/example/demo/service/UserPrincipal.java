@@ -59,4 +59,10 @@ public class UserPrincipal implements UserDetails {
 		// TODO Auto-generated method stub
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return String.format("Username: " + getUsername() + " password: " + getPassword() );
+	}
 }

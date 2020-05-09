@@ -50,14 +50,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		// We don't need CSRF for this example
 		httpSecurity.csrf().disable()
 				//  authenticate request can be accessible
 				.authorizeRequests()
 				.antMatchers("/api/authenticate", "/api/register/**").permitAll()
-				.antMatchers("/api/gestionnaire/**").hasAuthority("gestionnaire")
-				.antMatchers("/api/coach/**").hasAuthority("coach")
-				.antMatchers("/api/foodSpecialist/**").hasAuthority("foodSpecialist")
+				.antMatchers("/api/gestionnaire/**").permitAll()
+				.antMatchers("/api/coach/**").permitAll()
+				.antMatchers("/api/foodSpecialist/**").permitAll()
 				.antMatchers("/api/client/**").permitAll()
 				// all other requests need to be authenticated
 				.anyRequest().authenticated().and().

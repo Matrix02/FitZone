@@ -18,6 +18,8 @@ import com.example.demo.service.JwtUserDetailsService;
 
 
 import com.example.demo.config.JwtTokenUtil;
+import com.example.demo.entities.User;
+import com.example.demo.entities.DAO.IUser;
 import com.example.demo.model.JwtRequest;
 import com.example.demo.model.JwtResponse;
 import com.example.demo.model.UserDTO;
@@ -39,6 +41,7 @@ public class JwtAuthenticationController {
 
 	@Autowired
 	private JwtUserDetailsService userDetailsService;
+	
 
 	@RequestMapping(value = "/api/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {

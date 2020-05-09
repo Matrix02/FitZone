@@ -38,12 +38,14 @@ public class RrgisterController {
 	@PostMapping("/addClient")
 	public void saveClient(@RequestBody Client client) {
 		Clientservice.addOrUpdateClient(client);
+		System.out.println(client);
 	}
 	
 	
 	@PostMapping("/addCoach")
 	public void saveCoach(@RequestBody Coach coach) {
 		coachService.addOrUpdateCloach(coach);
+		System.out.println(coach);
 	}
 	
 	
