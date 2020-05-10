@@ -19,7 +19,7 @@ public class Coach extends User {
 	private int id;
 	private String photo;
 	private String bio;
-	private boolean approval = false;
+	private boolean approval = true;
 	
 	@OneToMany(mappedBy = "coach", fetch = FetchType.LAZY)
     private List<Exercices> exercicesOfCoach;

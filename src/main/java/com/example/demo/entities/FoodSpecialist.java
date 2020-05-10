@@ -23,7 +23,7 @@ public class FoodSpecialist extends User{
 	
 	private String photo;
 	private String bio;
-	private boolean approval = false;
+	private boolean approval = true;
 	
 	  @OneToMany(mappedBy = "MealOFFoodSpeci", fetch = FetchType.LAZY)
 	    List<Meals> mealsOfFoodSpe;
