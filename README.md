@@ -14,8 +14,9 @@ Nous voulons offrir un meilleur service, pour aider le maximum des personnes d'Ã
 
 ### Prerequisites
 
-JDK8+
-Maven 
+  JDK8+
+
+  Maven 
 
 ### Installing
 
