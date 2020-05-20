@@ -22,7 +22,7 @@ Nous voulons offrir un meilleur service, pour aider le maximum des personnes d'Ã
 
 Clone this repository and build the project using:
 
-mvn package
+`mvn package`
 
 ## Authors
 
