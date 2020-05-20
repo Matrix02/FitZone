@@ -20,19 +20,19 @@ Nous voulons offrir un meilleur service, pour aider le maximum des personnes d'Ã
 
 ### Installing
 
-Clone this repository and build the examples using:
+Clone this repository and build the project using:
 
 mvn package
 
 ## Authors
 
-Redouane Tansouft & Mostafa Louarat
+Redouane Tansouft & Mostafa Louarat.
 
 
 ## License
 
-This project is licensed under the MIT License
+This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-Special Thanks to Mohammed Dardour and Youcode Community 
+Special Thanks to Mohammed Dardour and Youcode Community.
